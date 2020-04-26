@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Scroll jQuery scrollie</title>
+	<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+	<STYLE>	
+		* {
+	  box-sizing: border-box;
+		}
+		body {
+		  font-family: 'Lobster', cursive;
+		  transition: background 1s ease;
+		  background: #3498db;
+		}
+		.slide{
+		position:relative;
+		}
+		.slide h2{
+		top: 30%;
+		position: absolute;
+		margin: 0 auto;
+		padding: 0;
+		left: auto;
+		right: auto;
+		text-align: center;
+		
+		}
+		.container{
+		height:100%;
+		}
+	</STYLE>
+</head>
+<body>
+
+	<div class="main-wrapper">
+		<div class="slide slide-one" data-background="#3498db">
+			<div class="container">
+				<h2>Firt</h2>
+			</div>
+		</div>
+		<div class="slide slide-two" data-background="#e74c3c">
+			<div class="container">
+				<h2>two</h2>
+			</div>
+		</div>
+		<div class="slide slide-three" data-background="#34495e">
+			<div class="container">
+				<h2>three</h2>
+			</div>
+		</div>
+		<div class="slide slide-four" data-background="#27ae60">
+			<div class="container">
+				<h2>four</h2>
+			</div>
+		</div>
+	
+	
+	</div>
+	
+	
+	
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="js/jquery.scrollie.js"></script>
+<script>
+/**
+ * This was built using the scrollie jQuery Plugin
+ * https://github.com/Funsella/jquery-scrollie
+ */
+
+
+$( window ).ready(function() {
+  
+    var wHeight = $(window).height();
+
+    $('.slide')
+      .height(wHeight)
+      .scrollie({
+        scrollOffset : -50,
+        scrollingInView : function(elem) {
+                   
+          var bgColor = elem.data('background');
+          
+          $('body').css('background-color', bgColor);
+          
+        }
+      });
+
+  });
+</script>	
+	
+	
+	
+</body>
+
+</html>
